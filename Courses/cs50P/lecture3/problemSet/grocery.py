@@ -2,7 +2,7 @@ grocery_list = {}  # Create an empty dictionary to store the grocery items and t
 
 while True:
     try:
-        item = input("Item: ").upper()  # Prompt the user to enter an item (convert it to uppercase for consistency)
+        item = input().upper()  # Prompt the user to enter an item and convert it to uppercase
 
         if item in grocery_list:  # Check if the item is already present in the grocery list
             grocery_list[item] += 1  # If yes, increment the occurrence count of the item by 1
@@ -12,7 +12,8 @@ while True:
     except EOFError:
         break  # Exit the loop immediately when Ctrl+D (EOF) is encountered
 
-for item, count in grocery_list.items():  # Iterate over the items and their counts in the grocery list dictionary
-    print(f"{count} {item}")  # Print the count and the item in the desired format
+# Sort the grocery list dictionary alphabetically by item
+sorted_list = sorted(grocery_list.items(), key=lambda x: x[0])
 
-print("Grocery list complete.")  # Print a message indicating that the grocery list is complete
+for item, count in sorted_list:  # Iterate over the sorted items and their counts
+    print(f"{count} {item}")  # Print the count and the item in the desired format
