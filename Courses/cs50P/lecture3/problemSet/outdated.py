@@ -1,17 +1,7 @@
 # Month names
 months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    "January", "February", "March", "April", "May", "June", "July",
+    "August", "September", "October", "November", "December"
 ]
 
 while True:
@@ -26,8 +16,17 @@ while True:
         else:
             # Split the input by spaces into month name, day, and year
             month_name, day, year = date_input.split()
+
+            # Remove the comma from the day
+            day = day[:-1]
+
             # Find the corresponding month index in the month names list
             month = months.index(month_name) + 1
+
+            # Convert day, month, and year to integers
+            day = int(day)
+            month = int(month)
+            year = int(year)
 
         # Validate the date by checking if the month is between 1 and 12 and the day is between 1 and 31
         if 1 <= month <= 12 and 1 <= day <= 31:
