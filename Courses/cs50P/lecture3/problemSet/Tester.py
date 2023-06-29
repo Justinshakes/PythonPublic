@@ -1,32 +1,29 @@
-def main():
-    fraction = get_fracdtion()
-    percentage = get_percentage(fraction)
-    remaining_fuel(percentage)
+# Menu dictionary with menu items as keys and their prices as values
+Menu = {
+    "Baja Taco": 4.00,
+    "Burrito": 7.50,
+    "Bowl": 8.50,
+    "Nachos": 11.00,
+    "Quesadilla": 8.50,
+    "Super Burrito": 8.50,
+    "Super Quesadilla": 9.50,
+    "Taco": 3.00,
+    "Tortilla Salad": 8.00
+}
 
+total = 0.00
 
-def get_fraction():
-    while True:
-        fraction = input("Fraction: ")
-        try:
-            x, y = map(int, fraction.split("/"))
-            result = round(eval(fraction), 2)
-            if 0 <= result <= 1:
-                return result
-        except (NameError, ZeroDivisionError, SyntaxError, ValueError):
-            pass
+while True:
+    try:
+        order = input("Item: ").title()  # Prompt the user to enter the menu item they want to order
+        # Check if the entered item exists in the menu
+        if order in Menu:
+            total += Menu[order] # Add the price of the ordered item to the total
+            print("Total: $" + format(total, ".2f")) # Print total with 2 decimal places
+        else:
+            print("Invalid item. Please choose a valid item from the menu.")  # Inform the user about an invalid item
+    except EOFError:
+        break  # Exit the loop immediately when Ctrl+D (EOF) is encountered
 
+print("Program closed.")
 
-def get_percentage(fraction):
-    return round(float(fraction) * 100)
-
-
-def remaining_fuel(percentage):
-    if percentage <= 1:
-        print("E")
-    elif percentage >= 99:
-        print("F")
-    else:
-        print(f"{percentage}%", end="")
-
-
-main()
