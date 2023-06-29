@@ -17,3 +17,9 @@ sorted_list = sorted(grocery_list.items(), key=lambda x: x[0])
 
 for item, count in sorted_list:  # Iterate over the sorted items and their counts
     print(f"{count} {item}")  # Print the count and the item in the desired format
+
+"""
+    item: This variable holds the value of the item (key) from the sorted list. It represents the name of the grocery item.
+
+count: This variable holds the value of the count (value) associated with the item from the sorted list. It represents the number of occurrences of the grocery item.
+"""
