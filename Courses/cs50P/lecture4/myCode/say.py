@@ -1,7 +1,7 @@
 import cowsay
 import sys
 
+from saying import goodbye
+
 if len(sys.argv) == 2:
-    cowsay.trex("hello, " + sys.argv[1])
-else:
-    print("Invalid number of arguments. Please provide one argument.")
+    goodbye(sys.argv[1])
