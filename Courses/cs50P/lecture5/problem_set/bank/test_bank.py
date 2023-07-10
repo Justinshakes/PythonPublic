@@ -12,4 +12,4 @@ def test_with_spaces():
 def test_with_punctuation_and_spaces():
     assert value("Hello, Newman") == 0
     assert value("How you doing?") == 20
-    assert value("How you doing?") == 100
+    assert value("What's happening?") == 100
