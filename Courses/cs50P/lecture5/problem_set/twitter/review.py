@@ -1,14 +1,35 @@
-def main():
-    user_input = input("Input: ")
-    print(shorten(user_input))
+from twttr import shorten
 
 
-def shorten(word):
-    vowels = ['A', 'E', 'I', 'O', 'U', 'a', 'e', 'i', 'o', 'u']
-    result_string = ''
-    for char in word:
-        if char not in vowels:
-            result_string += char
-    return result_string
+def test_shorten_word_with_vowels():
+    assert shorten("Justin") == "Jstn"
+    assert shorten("Hey Guys What's up") == "Hy Gys Wht's p"
 
-main()
+
+def test_shorten_word_without_vowels():
+    assert shorten("XYZ") == "XYZ"
+    assert shorten("QWRTY") == "QWRTY"
+
+
+def test_shorten_empty_string():
+    assert shorten("") == ""
+
+
+def test_shorten_word_with_only_vowels():
+    assert shorten("aeiou") == ""
+    assert shorten("AEIOU") == ""
+
+
+def test_shorten_word_with_only_non_vowels():
+    assert shorten("BCDFG") == "BCDFG"
+    assert shorten("bcdfg") == "bcdfg"
+
+
+def test_shorten_word_with_numbers():
+    assert shorten("Abc123") == "bc123"
+    assert shorten("Hello123World456") == "Hll123Wrld456"
+
+
+def test_shorten_word_with_special_characters_and_spaces():
+    assert shorten("Hello, World!") == "Hll, Wrld!"
+    assert shorten("#Hashtag") == "#Hshtg"

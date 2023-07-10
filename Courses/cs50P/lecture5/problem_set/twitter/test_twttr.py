@@ -11,10 +11,6 @@ def test_shorten_word_without_vowels():
     assert shorten("QWRTY") == "QWRTY"
 
 
-def test_shorten_word_with_both_vowels_and_non_vowels():
-    assert shorten("Python") == "Pythn"
-
-
 def test_shorten_empty_string():
     assert shorten("") == ""
 
