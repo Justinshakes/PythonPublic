@@ -1,17 +1,15 @@
-def main():
-    string = input("Greeting: ")
-    print("$", value(string))
+from bank import value
 
 
-def value(greeting):
-    greeting = greeting.lower()
-    if "hello" in greeting:
-        return 0
-    elif greeting.startswith('h'):
-        return 20
-    else:
-        return 100
+def test_no_spaces():
+    assert value("hello") == 0
 
 
-if __name__ == "__main__":
-    main()
+def test_with_spaces():
+    assert value("Hello Newman") == 0
+
+
+def test_with_punctuation_and_spaces():
+    assert value("Hello, Newman") == 0
+    assert value("How you doing?") == 20
+    assert value("How you doing?") == 10
