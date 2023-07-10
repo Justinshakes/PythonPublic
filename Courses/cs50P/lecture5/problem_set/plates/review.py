@@ -1,25 +1,22 @@
-def main():
-    plate = input("Plate: ")
-    if is_valid(plate):
-        print("Valid")
-    else:
-        print("Invalid")
-
-def is_valid(s):
-    return check_length(s) and check_first_two(s) and check_numbers_at_end(s)
+from plates import is_valid
 
 
-def check_length(s):
-    return 2 <= len(s) <= 6
+def test_valid_plate():
+    assert is_valid("CS50") == True
 
 
-def check_first_two(s):
-    return s[:2].isalpha()
+def test_invalid_first_num_is_0():
+    assert is_valid("CS05") == False
 
 
-def check_numbers_at_end(s):
-    found_number = False
+def test_invalid_non_alphanumeric_characters():
+    assert is_valid("PI3.14") == False
 
-    for i in range(2, len(s)):
-        if s[i].isnumeric() and not found_number and s[i] == '0'
-            return False
+
+def test_invalid_single_letter():
+    assert is_valid("H") == False
+
+
+def test_invalid_numbers_only():
+    assert  is_valid("123456") == False
+
