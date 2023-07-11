@@ -6,8 +6,6 @@ if len(sys.argv) != 2 or not sys.argv[1].endswith(".py"):
 with open(sys.argv[1]) as file:
     lines = file.readlines()
 
-py_file = sys.argv[1]
-
 code_line_count = 0
 
 for line in lines:
@@ -15,4 +13,4 @@ for line in lines:
         code_line_count += 1
         print(line, end="")
 
-print("Total lines of code:", code_line_count)
+print(code_line_count)
