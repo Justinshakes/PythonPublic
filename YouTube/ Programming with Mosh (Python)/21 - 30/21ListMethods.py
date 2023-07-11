@@ -15,7 +15,7 @@
 # print(numbers)
 # print(numbers2)
 
-numbers = [5, 2, 1, 5, 7, 4, 3, 1, 3, 5, 6, 8, 2]
+numbers = [5, 2, 1, 5, 7, 4, 3, 1, 3, 5, 6, 8, 2, 11, 34, 34]
 uniques = []
 
 for num in numbers:
@@ -24,7 +24,7 @@ for num in numbers:
         if num == other_num and not found_self:
             found_self = True
         elif num == other_num and found_self:
-            numbers.remove(other_num)
+            numbers.remove(num)
 numbers.sort()
 print(numbers)
 
