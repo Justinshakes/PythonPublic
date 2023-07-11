@@ -9,8 +9,8 @@ with open(sys.argv[1]) as file:
 code_line_count = 0
 
 for line in lines:
-    if '#' not in line and line.strip() != '':
+    line = line.strip()  # Strip trailing whitespace and newline characters
+    if not line.startswith('#') and line.strip():  # In Python, empty strings evaluate to False
         code_line_count += 1
-        print(line, end="")
 
 print(code_line_count)
