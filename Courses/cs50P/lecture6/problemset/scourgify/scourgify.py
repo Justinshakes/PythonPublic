@@ -21,7 +21,7 @@ with open("before.csv") as file:
         # Iterate over each row in the input file
         for row in reader:
             # Write the "name" field to the output file
-            first, last = row["name"].split(",")
+            last, first = row["name"].split(",")
             # print("first:" + first + "  Last: ")
             # writer.writerow({"first name": first_name, "last name": last_name, "house": row["house"]})
             writer.writerow({"first": first, "last": last, "house": " " + row["house"]})
