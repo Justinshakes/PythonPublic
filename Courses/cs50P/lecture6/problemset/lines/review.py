@@ -13,4 +13,4 @@ for line in lines:
     if not line.startswith('#') and line.strip():
         code_line_count += 1
 
-    
+print(code_line_count)
