@@ -3,9 +3,9 @@ import csv
 import csv
 
 # Open the input CSV file
-with open("old.csv") as file:
+with open("before.csv") as file:
     # Open the output CSV file
-    with open("new.csv", 'w', newline='') as new_file:
+    with open("after.csv", 'w', newline='') as new_file:
         # Specify the fieldnames for the output file
         fieldnames = ["first", "last", "house"]
 
