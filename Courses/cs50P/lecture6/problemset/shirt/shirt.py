@@ -1,9 +1,13 @@
-# pip install Pillow
-# You can open an image (e.g., shirt.png) with code like:
-# shirt = Image.open("shirt.png")
+import sys
 
-# You can get the width and height, respectively, of that image as a tuple with code like:
-# size = shirt.size
 
-# And you can overlay that image on top of another (e.g., photo) with code like
-# photo.paste(shirt, shirt)
+def main():
+    check_command_line_arg()
+
+
+def check_command_line_arg():
+    print(sys.argv)
+
+
+if __name__ == "__main__":
+    main()
