@@ -12,4 +12,3 @@ for line in lines:
     line = line.strip()
     if not line.startswith('#') and line.strip():
         code_line_count += 1
-        
