@@ -1,5 +1,4 @@
 import re
-import sys
 
 
 def main():
@@ -7,17 +6,12 @@ def main():
 
 
 def validate(ip):
-    if matches := re.search(r'^([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)', ip):
+    if matches := re.search(r'^(\d+)\.(\d+)\.(\d+)\.(\d+)$', ip):
         for i in range(1, 5):
-            if 0 > int(matches.group(i)) or int(matches.group(i)) > 255:
+            if not 0 <= int(matches.group(i)) <= 255:
                 return False
-    else:
-        return False
-
-    return True
-
-
-...
+        return True
+    return False
 
 
 if __name__ == "__main__":
