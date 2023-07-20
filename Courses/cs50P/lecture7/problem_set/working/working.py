@@ -10,7 +10,7 @@ def convert(s):
     # Check if the input matches the correct format using regular expression
     if correct_format := re.search(
             r"^(([0-2]*[0-9]):*([0-5][0-9])*) ([A|P]M) to (([0-2]*[0-9]):*([0-5][0-9])*) ([A|P]M)$", s
-            ):
+    ):
 
         # Extract groups from the regex match
         groups = correct_format.groups()
