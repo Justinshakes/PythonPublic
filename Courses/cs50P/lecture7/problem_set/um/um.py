@@ -7,9 +7,8 @@ def main():
 
 
 def count(s):
-    matches = re.search(r"(um)", s.lower())
-    print(matches.groups())
-    return "Success"
+    matches = re.findall(r"\b\W*um\W*", s, re.IGNORECASE)
+    return len(matches)
 
 
 if __name__ == "__main__":
