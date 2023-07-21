@@ -15,6 +15,7 @@ def test_multable_um():
 def test_invalid():
     assert count("yummy") == 0
     assert count("rum") == 0
+    assert count("rum Tum Fume") == 0
 
 def test_unique_cases():
     assert count("um,") == 1
