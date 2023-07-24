@@ -16,3 +16,5 @@ point2 = Point()
 point2.x = 1
 point2.y = 2
 print(point2.x)
+
+# Relearning
