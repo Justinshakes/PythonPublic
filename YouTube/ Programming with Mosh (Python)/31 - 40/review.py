@@ -1,13 +1,37 @@
-class Person:
+class Mammal:
+
     def __init__(self, name):
         self.name = name
+    def walk(self):
+        print(f"{self.name} is walking")
 
-    def talk(self):
-        print(f"Hello, I am {self.name}")
+
+class Dog(Mammal):
+    def bark(self):
+        print("Bark")
+
+    # def walk(self):
+    #     print("Dog walk")
 
 
-p1 = Person("Justin")
+class Cat(Mammal):
+    def meow(self):
+        print("Meow")
 
-print(p1.name)
+    # def walk(self):
+    #     print("Cat walk")
 
-p1.talk()
+
+m1 = Mammal("Humman")
+m1.walk()
+
+d1 = Dog("Rex")
+c1 = Cat("Tiggs")
+
+d1.bark()
+d1.walk()
+
+c1.meow()
+c1.walk()
+
+
