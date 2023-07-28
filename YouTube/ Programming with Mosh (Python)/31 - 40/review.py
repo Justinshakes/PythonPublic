@@ -1,25 +1,20 @@
-#  Review Again Again
-class Mammal:
-    def walk(self):
-        print("walk")
+class Point:
+    def move(self):
+        print("Move")
+
+    def draw(self):
+        print("Draw")
 
 
-class Dog(Mammal):
-    def bark(self):
-        print("Bark")
+point1 = Point()
+point1.x = 10
+point1.y = 20
+print(point1.x)
+print(point1.y)
 
+point1.move()
+point1.draw()
 
-class Cat(Mammal):
-    def meow(self):
-        print("Meow")
+point2 = Point()
 
-
-d1 = Dog()
-
-c1 = Cat()
-
-d1.bark()
-d1.walk()
-
-c1.meow()
-c1.walk()
+point2.draw()
