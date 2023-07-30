@@ -1,14 +1,19 @@
-# I will get to this I WILL!
 def main():
-    student = get_student()
-    if student["name"] == "Padma":
-        student["house"] = "Ravenclaw"
-    print(f"{student['name']} from {student['house']}")
+    name, house = get_student()
+    print(f"{name} form {house}")
 
 
 def get_student():
-    return {"name": input("Name: "), "house": input("House: ")}
+    name = input("Name: ")
+    house = input("House: ")
+    return name, house
 
 
 if __name__ == "__main__":
     main()
+
+
+
+
+
+
