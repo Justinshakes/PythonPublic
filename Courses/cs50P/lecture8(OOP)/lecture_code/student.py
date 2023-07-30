@@ -1,14 +1,11 @@
 def main():
     student = get_student()
-    if student[0] == "Padma":
-        student[1] = "Ravenclaw"
-    print(f"{student[0]} form {student[1]}")
-    
+    print(f"{student['name']} form {student['house']}")
+
 
 def get_student():
-    name = input("Name: ").strip()
-    house = input("House: ").strip()
-    return [name, house]
+    student = {"name": input("Name: "), "house": input("House: ")}
+    return student
 
 
 if __name__ == "__main__":
