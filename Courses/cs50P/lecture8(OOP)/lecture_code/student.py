@@ -3,11 +3,11 @@ def main():
     if student[0] == "Padma":
         student[1] = "Ravenclaw"
     print(f"{student[0]} form {student[1]}")
-
+    
 
 def get_student():
-    name = input("Name: ")
-    house = input("House: ")
+    name = input("Name: ").strip()
+    house = input("House: ").strip()
     return [name, house]
 
 
