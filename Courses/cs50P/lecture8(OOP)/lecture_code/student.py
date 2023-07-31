@@ -1,15 +1,21 @@
 class Student:
     def __init__(self, name, house):
-
-        if not name:
-            raise ValueError("Missing Name")
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin", "farm"]:
-            raise ValueError("Invalid House")
         self.name = name
-        self.house = house
+        self.house = house  # Initialize the house attribute using the setter method
 
     def __str__(self):
         return f"{self.name} from {self.house}"
+
+    @property
+    def house(self):
+        return self._house  # The getter method for the house attribute
+
+    @house.setter
+    def house(self, house):
+        valid_houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin", "farm"]
+        if house not in valid_houses:
+            raise ValueError(f"{house} is an invalid house")
+        self._house = house  # The private attribute `_house` holds the actual value of the house
 
 
 def main():
@@ -18,9 +24,9 @@ def main():
 
 
 def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return Student(name, house)
+    name = input("Name: ")  # Get the student's name from user input
+    house = input("House: ")  # Get the student's house from user input
+    return Student(name, house)  # Create a new Student object and return it
 
 
 if __name__ == "__main__":
