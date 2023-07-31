@@ -1,31 +1,15 @@
-class Mammal:
+class Point:
+    def move(self):
+        print("Move")
 
-    def __init__(self, name):
-        self.name = name
-
-    def walk(self):
-        print(f"{self.name} is walking")
-
-
-class Dog(Mammal):
-    def bark(self):
-        print(f"{self.name} is Barking")
+    def draw(self):
+        print("Draw")
 
 
-class Cat(Mammal):
-    def meow(self):
-        print(f"{self.name} is Meowing")
+p1 = Point()
 
+p1.x = 10
 
-Mammal = Mammal("Human")
+print(p1.x)
 
-dog1 = Dog("Doggo")
-
-cat1 = Cat("Kitty Cat")
-
-Mammal.walk()
-dog1.walk()
-cat1.walk()
-
-dog1.bark()
-cat1.meow()
+p1.draw()
