@@ -1,45 +1,40 @@
-class Student:
-    def __init__(self, name, house):
+import random
+
+
+class Wizard:
+    houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]
+
+    def __init__(self, name):
+        if not name:
+            raise ValueError("Missing name")
         self.name = name
+
+    def __str__(self):
+        return f"{self.name} is a wizard"
+
+
+class Student(Wizard):
+    def __init__(self, name, house):
+        super().__init__(name)
         self.house = house
 
     def __str__(self):
-        return f"{self.name} from {self.house}"
-
-    @property
-    def name(self):
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        if not name:
-            raise ValueError("Missing name")
-        self._name = name
-
-    @property
-    def house(self):
-        return self._house
-
-    @house.setter
-    def house(self, house):
-        valid_houses = ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin", "farm"]
-        if house not in valid_houses:
-            raise ValueError(f"{house} is an invalid house")
-        self._house = house
+        return f"{self.name} is a student from house {self.house}"
 
 
-def main():
-    student = get_student()
-    print(student)
+class Professor(Wizard):
+    def __init__(self, name, subject):
+        super().__init__(name)
+        self.subject = subject
+
+    def __str__(self):
+        return f"{self.name} is a Professor that teaches {self.subject}"
 
 
-def get_student():
-    name = input("Name: ")
-    house = input("House: ")
-    return Student(name, house)
+wizard = Wizard("Albus")
+student = Student("Harry", "Gryffindor")
+professor = Professor("Severus", "Defense Against the Dark Arts")
 
-
-if __name__ == "__main__":
-    main()
-
-    # .....
+print(wizard)
+print(student)
+print(professor)
