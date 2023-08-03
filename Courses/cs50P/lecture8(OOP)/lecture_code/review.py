@@ -1,14 +1,22 @@
-print(type(50))
-print(type(int()))
+class Student:
+    def __init__(self, name, house):
+        self.name = name
+        self.house = house
 
-print(type("Str"))
-print(type(str()))
+    def __str__(self):
+        return f"{self.name} is from house {self.house}"
 
-print(type([1, 2, 3]))
-print(type(list()))
+    @classmethod
+    def get(cls):
+        name = input("Name: ")
+        house = input("House: ")
+        return cls(name, house)
 
-print(type({"apple": 3}))
-print(type(dict()))
 
-print(type((1, 2, 3)))
-print(type(tuple()))
+def main():
+    student = Student.get()
+    print(student)
+
+
+if __name__ == "__main__":
+    main()
