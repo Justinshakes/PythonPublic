@@ -1,16 +1,3 @@
-def convert(user_input):
-    if ":)" in user_input:
-        return user_input.replace(":)", "🙂")
-    if ":(" in user_input:
-        return user_input.replace(":(", "🙁")
-    return user_input
+user_input = input("Input String: ")
 
-
-def main():
-    user_input = input("Enter String: ")
-    result = convert(user_input)
-    print(result)
-
-
-if __name__ == "__main__":
-    main()
+print(user_input.casefold())

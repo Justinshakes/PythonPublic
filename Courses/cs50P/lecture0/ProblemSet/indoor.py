@@ -1,3 +1,3 @@
-input = input("Input String: ")
+user_input = input("Input String: ")
 
-print(input.casefold())
+print(user_input.casefold())
