@@ -1,12 +1,15 @@
-def deep_thought(user_input):
-    if user_input == "42" or user_input == "forty-two" or user_input == "forty two":
-        return "Yes"
-    return "No"
+def greetings(user_input):
+    if "hello" in user_input:
+        return "$0"
+    elif user_input.startswith('h'):
+        return "$20"
+    else:
+        return "$100"
 
 
 def main():
-    print(deep_thought(input("What is the Answer to the Great Question of Life, "
-                             "the Universe, and Everything? ")))
+    user_input = input("Greeting: ")
+    print(greetings(user_input.lower().strip()))
 
 
 if __name__ == "__main__":

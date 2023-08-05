@@ -1,15 +1,16 @@
-def main():
-    string = input("Greating: ")
-    print(greetings(string.lower()))
-
-
-def greetings(string):
-    if "hello" in string:
+def greetings(user_input):
+    if "hello" in user_input:
         return "$0"
-    elif string.startswith('h'):
+    elif user_input.startswith('h'):
         return "$20"
     else:
         return "$100"
 
 
-main()
+def main():
+    user_input = input("Greeting: ")
+    print(greetings(user_input.lower().strip()))
+
+
+if __name__ == "__main__":
+    main()
