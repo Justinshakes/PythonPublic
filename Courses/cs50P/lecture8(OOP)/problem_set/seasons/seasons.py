@@ -1,6 +1,10 @@
 import re
 import sys
 from datetime import date
+import inflect
+
+p = inflect.engine()
+
 
 
 def main():
@@ -12,7 +16,9 @@ def main():
     date_of_birth = date(int(year), int(month), int(day))
     date_of_today = date.today()
     diff = date_of_today - date_of_birth
-    print(diff)
+    total_minutes = diff.days * 24 * 60
+    output = p.number_to_words(total_minutes, andword="")
+    print(output.capitalize() + " minutes")
 
 
 def check_birthday(birth_date):
