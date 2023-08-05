@@ -1,24 +1,24 @@
+import re
+import sys
 from datetime import date
-
-# def english_conversion():
-
-
 
 
 def main():
-    # date_of_birth_input = input("Input date of birth YYYY-MM-DD: ")
-    date_of_birth_input = "1998-11-04"
-    year, month, day = map(int, date_of_birth_input.split("-"))
-    date_of_birth = date(year, month, day)
-
-    print("Current date:", date.today())
-    print("Date of birth:", date_of_birth)
-
-    time_difference = date.today() - date_of_birth
-
-    print("Time difference:", int(time_difference.days) * 60, "minutes")
+    birth_date = input("Date of Birth: ")
+    try:
+        year, month, day = check_birthday(birth_date)
+    except:
+        sys.exit("Invalid Date")
+    date_of_birth = date(int(year), int(month), int(day))
+    date_of_today = date.today()
+    diff = date_of_today - date_of_birth
+    print(diff)
 
 
+def check_birthday(birth_date):
+    if re.search(r"[0-9]{4}-[0-9]{2}-[0-9]{2}", birth_date):
+        year, month, day = birth_date.split("-")
+        return year, month, day
 
 
 if __name__ == "__main__":
