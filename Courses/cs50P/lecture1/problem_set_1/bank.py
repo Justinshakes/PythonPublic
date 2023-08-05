@@ -2,6 +2,7 @@ def main():
     string = input("Greating: ")
     print(greetings(string.lower()))
 
+
 def greetings(string):
     if "hello" in string:
         return "$0"
@@ -9,5 +10,6 @@ def greetings(string):
         return "$20"
     else:
         return "$100"
+
 
 main()
