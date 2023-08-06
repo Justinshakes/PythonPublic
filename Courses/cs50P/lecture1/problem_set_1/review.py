@@ -1,13 +1,23 @@
-def meaning_of_life(user_input):
-    if user_input == "42" or user_input == "forty-two" or user_input == "forty two":
-        return "Yes"
-    return "No"
+def check_file_type(file):
+    file_type_mapping = {
+        "gif": "image/gif",
+        "png": "image/png",
+        "jpg": "image/jpeg",
+        "jpeg": "image/jpeg",
+        "pdf": "application/pdf",
+        "txt": "text/plain",
+        "zip": "application/zip"
+    }
+
+    file_array = file.split(".")
+    file_type = file_array[-1].lower().strip()
+
+    return file_type_mapping.get(file_type, "application/octet-stream")
 
 
 def main():
-    user_input = input("What is the meaning of life? ")
-    answer = meaning_of_life(user_input.strip().casefold())
-    print(answer)
+    file = input("File name: ")
+    print(check_file_type(file))
 
 
 if __name__ == "__main__":
