@@ -9,7 +9,7 @@ def greetings(user_input):
 
 def main():
     user_input = input("Greeting: ")
-    pay_out = greetings(user_input.lower())
+    pay_out = greetings(user_input.lower().strip())
     print(pay_out)
 
 
