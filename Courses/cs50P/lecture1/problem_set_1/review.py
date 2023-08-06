@@ -1,15 +1,22 @@
-def greetings(user_input):
-    if "hello" in user_input:
-        return "$0"
-    elif user_input.startswith('h'):
-        return "$20"
-    else:
-        return "$100"
+def check_file_type(file):
+    file_array = file.split('.')
+    file_type = file_array[-1].lower().strip()
+
+    match file_type:
+        case "gif" | "png":
+            return "image/" + file_type
+        case "jpg" | "jpeg":
+            return "image/jpeg"
+        case "pdg":
+            return "application/pdf"
+        case "txt":
+            return "text/plain"
+        
 
 
 def main():
-    user_input = input("Greeting: ")
-    print(greetings(user_input.lower().strip()))
+    file = input("File name: ")
+    print(check_file_type(file))
 
 
 if __name__ == "__main__":
