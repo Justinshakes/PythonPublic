@@ -1,8 +1,14 @@
-user_input = input("What is the Answer to the Great Question of Life, the Universe, and Everything? ")
+def meaning_of_life(user_input):
+    if user_input == "42" or user_input == "forty-two" or user_input == "forty two":
+        return "Yes"
+    return "No"
 
-user_input = user_input.strip().casefold()
 
-if user_input == "42" or user_input == "forty-two" or user_input == "forty two":
-    print("Yes")
-else:
-    print("No")
+def main():
+    user_input = input("What is the meaning of life? ")
+    answer = meaning_of_life(user_input.strip().casefold())
+    print(answer)
+
+
+if __name__ == "__main__":
+    main()
