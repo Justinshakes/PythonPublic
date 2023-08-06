@@ -7,11 +7,14 @@ def check_file_type(file):
             return "image/" + file_type
         case "jpg" | "jpeg":
             return "image/jpeg"
-        case "pdg":
+        case "pdf":
             return "application/pdf"
         case "txt":
             return "text/plain"
-        
+        case "zip":
+            return "application/zip"
+        case _:
+            return "application/octet-stream"
 
 
 def main():

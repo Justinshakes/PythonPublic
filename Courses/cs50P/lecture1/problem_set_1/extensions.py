@@ -1,23 +1,26 @@
-fileName = input("File name: ")
+def check_file_type(file):
+    file_array = file.split('.')
+    file_type = file_array[-1].lower().strip()
 
-if "." in fileName:
-    words = fileName.split('.')
-    print(words)
-    fileType = words[-1].lower().strip()
-    # [-1] = last word in array
-
-    match fileType:
+    match file_type:
         case "gif" | "png":
-            print("image/" + fileType)
+            return "image/" + file_type
         case "jpg" | "jpeg":
-            print("image/jpeg")
+            return "image/jpeg"
         case "pdf":
-            print("application/pdf")
+            return "application/pdf"
         case "txt":
-            print("text/plain")
+            return "text/plain"
         case "zip":
-            print("application/zip")
+            return "application/zip"
         case _:
-            print("application/octet-stream")
-else:
-    print("application/octet-stream")
+            return "application/octet-stream"
+
+
+def main():
+    file = input("File name: ")
+    print(check_file_type(file))
+
+
+if __name__ == "__main__":
+    main()
