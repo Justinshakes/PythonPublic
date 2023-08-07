@@ -1,23 +1,14 @@
-def check_file_type(file):
-    file_type_mapping = {
-        "gif": "image/gif",
-        "png": "image/png",
-        "jpg": "image/jpeg",
-        "jpeg": "image/jpeg",
-        "pdf": "application/pdf",
-        "txt": "text/plain",
-        "zip": "application/zip"
-    }
-
-    file_array = file.split(".")
-    file_type = file_array[-1].lower().strip()
-
-    return file_type_mapping.get(file_type, "application/octet-stream")
+def calculate(num1, operator, num2):
+    return float(eval(num1 + operator + num2))
 
 
 def main():
-    file = input("File name: ")
-    print(check_file_type(file))
+    try:
+        num1, operator, num2 = input("Expression (e.g., 5 + 3): ").split()
+        result = calculate(num1, operator, num2)
+        print(round(result, 1))
+    except ValueError:
+        print("Invalid input. Please provide an expression like '5 + 3'.")
 
 
 if __name__ == "__main__":
