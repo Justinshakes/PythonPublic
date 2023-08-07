@@ -1,14 +1,24 @@
-def calculate(num1, operator, num2):
-    return float(eval(num1 + operator + num2))
+def convert(time):
+    hours, minutes = time.split(':')
+    return round(float(hours) + float(minutes) / 60, 2)
+
+
+def what_time(time):
+    if 7 <= time <= 8:
+        return "Breakfast time"
+    elif 12 <= time <= 13:
+        return "Lunch time"
+    elif 18 <= time <= 19:
+        return "Dinner time"
+    else:
+        return ""
 
 
 def main():
-    try:
-        num1, operator, num2 = input("Expression (e.g., 5 + 3): ").split()
-        result = calculate(num1, operator, num2)
-        print(round(result, 1))
-    except ValueError:
-        print("Invalid input. Please provide an expression like '5 + 3'.")
+    user_input = input("What time is it? ")
+    converted_time = convert(user_input)
+    meal_time = what_time(converted_time)
+    print(meal_time)
 
 
 if __name__ == "__main__":
