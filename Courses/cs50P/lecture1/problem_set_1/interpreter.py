@@ -1,26 +1,15 @@
-userInput = input("Expression: ")
-x, operator, y = userInput.split(' ')
+def calculate(num1, operator, num2):
+    return float(eval(num1 + operator + num2))
 
-result = float(eval(x + operator + y))
 
-print(result)
+def main():
+    try:
+        num1, operator, num2 = input("Expression (e.g., 5 + 3): ").split()
+        result = calculate(num1, operator, num2)
+        print(round(result, 1))
+    except ValueError:
+        print("Invalid input. Please provide an expression like '5 + 3'.")
 
-"""
-userInput = input("Expression: ")
-x, operator, y = userInput.split(' ')
 
-result = match operator:
-    case '+':
-        float(x) + float(y)
-    case '-':
-        float(x) - float(y)
-    case '*':
-        float(x) * float(y)
-    case '/':
-        float(x) / float(y)
-    case _:
-        print("Invalid operator")
-
-print(result)
-
-"""
+if __name__ == "__main__":
+    main()
