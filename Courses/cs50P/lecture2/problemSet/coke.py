@@ -1,3 +1,13 @@
+def get_change(amount_due):
+    valid_coins = (5, 10, 25)
+    while True:
+        coin = int(input("Insert Coin: "))
+        if coin in valid_coins:
+            return coin
+        else:
+            print("Amount Due:", amount_due)
+
+
 def main():
     amount_due = 50
     while amount_due > 0:
@@ -6,13 +16,5 @@ def main():
     print("Change Owed:", abs(amount_due))
 
 
-def get_change(amount_due):
-    while True:
-        n = int(input("Insert Coin: "))
-        if n == 5 or n == 10 or n == 25:
-            return n
-        else:
-            print("Amount Due:", amount_due)
-
-
-main()
+if __name__ == "__main__":
+    main()

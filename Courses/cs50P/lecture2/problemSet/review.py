@@ -1,20 +1,19 @@
-def convert_to_snake_case(string):
-    result = ""
-
-    for char in string:
-        if char.isupper():
-            result += "_" + char.lower()
+def get_change(amount_due):
+    valid_coins = (5, 10, 25)
+    while True:
+        coin = int(input("Insert Coin: "))
+        if coin in valid_coins:
+            return coin
         else:
-            result += char
-
-    return result
+            print("Amount Due:", amount_due)
 
 
 def main():
-    user_input = input("camelCase: ")
-
-    snake_case = convert_to_snake_case(user_input)
-    print(snake_case)
+    amount_due = 50
+    while amount_due > 0:
+        print("Amount Due:", amount_due)
+        amount_due -= get_change(amount_due)
+    print("Change Owed:", abs(amount_due))
 
 
 if __name__ == "__main__":
