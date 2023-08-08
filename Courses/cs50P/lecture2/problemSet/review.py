@@ -1,18 +1,35 @@
-def foo(string):
-    vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]
-    result = ""
+def fruits_info(fruit):
+    fruits_calories = {
+        "apple": 130,
+        "avocado": 50,
+        "banana": 110,
+        "cantaloupe": 50,
+        "grapefruit": 60,
+        "grapes": 90,
+        "honeydew melon": 50,
+        "kiwifruit": 90,
+        "lemon": 15,
+        "lime": 20,
+        "nectarine": 60,
+        "orange": 80,
+        "peach": 60,
+        "pear": 100,
+        "pineapple": 50,
+        "plums": 70,
+        "strawberries": 50,
+        "sweet cherries": 100,
+        "tangerine": 50,
+        "watermelon": 80,
+    }
 
-    for char in string:
-        if char not in vowels:
-            result += char
-
-    return result
+    return fruits_calories.get(fruit, "")
 
 
 def main():
-    user_string = input("Twitter Input: ")
-    result = foo(user_string)
-    print(result)
+    fruit = input("Item: ")
+    calories = fruits_info(fruit.lower().strip())
+    if calories:
+        print("Calories:", calories)
 
 
 if __name__ == "__main__":

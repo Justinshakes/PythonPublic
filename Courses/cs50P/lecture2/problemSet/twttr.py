@@ -1,4 +1,4 @@
-def foo(string):
+def twitter_string(string):
     vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]
     result = ""
 
@@ -11,7 +11,7 @@ def foo(string):
 
 def main():
     user_string = input("Twitter Input: ")
-    result = foo(user_string)
+    result = twitter_string(user_string)
     print(result)
 
 
