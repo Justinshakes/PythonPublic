@@ -22,16 +22,16 @@ def check_first_two(s):
     return s[:2].isalpha()
 
 
-def check_numbers_at_end(s):
+def check_numbers_at_end(plate):
     # Check if numbers appear at the end of the license plate and not in the middle
     found_number = False
 
-    for i in range(2, len(s)):
-        if s[i].isnumeric() and not found_number and s[i] == '0':
+    for i in range(2, len(plate)):
+        if plate[i].isnumeric() and not found_number and plate[i] == '0':
             return False  # Return False if the first number used is '0'
-        if s[i].isalpha() and found_number:
+        if plate[i].isalpha() and found_number:
             return False  # Return False if a letter appears after a number
-        if s[i].isnumeric() and not found_number:
+        if plate[i].isnumeric() and not found_number:
             found_number = True  # Set found_number to True when the first number is encountered
 
     return True

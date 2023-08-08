@@ -1,35 +1,39 @@
-def fruits_info(fruit):
-    fruits_calories = {
-        "apple": 130,
-        "avocado": 50,
-        "banana": 110,
-        "cantaloupe": 50,
-        "grapefruit": 60,
-        "grapes": 90,
-        "honeydew melon": 50,
-        "kiwifruit": 90,
-        "lemon": 15,
-        "lime": 20,
-        "nectarine": 60,
-        "orange": 80,
-        "peach": 60,
-        "pear": 100,
-        "pineapple": 50,
-        "plums": 70,
-        "strawberries": 50,
-        "sweet cherries": 100,
-        "tangerine": 50,
-        "watermelon": 80,
-    }
+def is_valid(plate):
+    return check_length(plate) and check_first_two(plate) and check_numbers_at_end(plate) and check_no_punctuation(plate)
 
-    return fruits_calories.get(fruit, "")
+
+def check_length(plate):
+    return 2 <= len(plate) <= 6
+
+
+def check_first_two(plate):
+    return plate[:2].isalpha()
+
+
+def check_numbers_at_end(plate):
+    found_number = False
+
+    for i in range(2, len(plate)):
+        if plate[i].isnumeric() and not found_number and plate[i] == '0':
+            return False
+        if plate[i].isalpha() and found_number:
+            return False
+        if plate[i].isnumeric() and not found_number:
+            found_number = True
+
+    return True
+
+
+def check_no_punctuation(plate):
+    return plate.isalnum()
 
 
 def main():
-    fruit = input("Item: ")
-    calories = fruits_info(fruit.lower().strip())
-    if calories:
-        print("Calories:", calories)
+    plate = input("Plate: ")
+    if is_valid(plate):
+        print("Valid")
+    else:
+        print("Invalid")
 
 
 if __name__ == "__main__":
