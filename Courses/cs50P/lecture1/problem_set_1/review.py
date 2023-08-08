@@ -1,13 +1,15 @@
-def meaning_of_life(user_input):
-    if user_input == "42" or user_input == "forty-two" or user_input == "fortytwo":
-        return "Yes"
-    return "No"
+def greetings(user_input):
+    if "hello" in user_input:
+        return "$0"
+    elif user_input.startswith('h'):
+        return "$20"
+    return "$100"
 
 
 def main():
-    user_input = input("what is the meaning of life? ")
-    answer = meaning_of_life(user_input)
-    print(answer)
+    user_input = input("Greeting: ")
+    pay_out = greetings(user_input.strip().lower())
+    print(pay_out)
 
 
 if __name__ == "__main__":
