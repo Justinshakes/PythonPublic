@@ -1,19 +1,34 @@
-def get_change(amount_due):
-    valid_coins = (5, 10, 25)
-    while True:
-        coin = int(input("Insert Coin: "))
-        if coin in valid_coins:
-            return coin
-        else:
-            print("Amount Due:", amount_due)
+def fruit_info(fruit):
+    fruits_calories = {
+        "apple": 130,
+        "avocado": 50,
+        "banana": 110,
+        "cantaloupe": 50,
+        "grapefruit": 60,
+        "grapes": 90,
+        "honeydew melon": 50,
+        "kiwifruit": 90,
+        "lemon": 15,
+        "lime": 20,
+        "nectarine": 60,
+        "orange": 80,
+        "peach": 60,
+        "pear": 100,
+        "pineapple": 50,
+        "plums": 70,
+        "strawberries": 50,
+        "sweet cherries": 100,
+        "tangerine": 50,
+        "watermelon": 80,
+    }
+
+    return fruits_calories.get(fruit, "")
 
 
 def main():
-    amount_due = 50
-    while amount_due > 0:
-        print("Amount Due:", amount_due)
-        amount_due -= get_change(amount_due)
-    print("Change Owed:", abs(amount_due))
+    fruit = input("Input a fruit: ")
+    calories = fruit_info(fruit.lower())
+    print("Calories:", calories)
 
 
 if __name__ == "__main__":
