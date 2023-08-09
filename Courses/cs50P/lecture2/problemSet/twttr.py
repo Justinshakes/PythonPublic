@@ -1,8 +1,8 @@
-def twitter_string(string):
+def twitter_string(tweet):
     vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]
     result = ""
 
-    for char in string:
+    for char in tweet:
         if char not in vowels:
             result += char
 
@@ -10,8 +10,8 @@ def twitter_string(string):
 
 
 def main():
-    user_string = input("Twitter Input: ")
-    result = twitter_string(user_string)
+    tweet = input("Tweet: ")
+    result = twitter_string(tweet)
     print(result)
 
 

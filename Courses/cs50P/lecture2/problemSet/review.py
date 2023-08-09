@@ -1,34 +1,18 @@
-def fruit_info(fruit):
-    fruits_calories = {
-        "apple": 130,
-        "avocado": 50,
-        "banana": 110,
-        "cantaloupe": 50,
-        "grapefruit": 60,
-        "grapes": 90,
-        "honeydew melon": 50,
-        "kiwifruit": 90,
-        "lemon": 15,
-        "lime": 20,
-        "nectarine": 60,
-        "orange": 80,
-        "peach": 60,
-        "pear": 100,
-        "pineapple": 50,
-        "plums": 70,
-        "strawberries": 50,
-        "sweet cherries": 100,
-        "tangerine": 50,
-        "watermelon": 80,
-    }
+def twitter_string(tweet):
+    vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]
+    result = ""
 
-    return fruits_calories.get(fruit, "")
+    for char in tweet:
+        if char not in vowels:
+            result += char
+
+    return result
 
 
 def main():
-    fruit = input("Input a fruit: ")
-    calories = fruit_info(fruit.lower())
-    print("Calories:", calories)
+    tweet = input("Tweet: ")
+    result = twitter_string(tweet)
+    print(result)
 
 
 if __name__ == "__main__":
