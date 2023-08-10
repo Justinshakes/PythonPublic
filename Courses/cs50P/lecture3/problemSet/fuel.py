@@ -1,31 +1,33 @@
-def main():
-    fraction = get_fraction()          # Get the fraction input from the user
-    percentage = get_percentage(fraction)   # Calculate the percentage based on the fraction
-    remaining_fuel(percentage)        # Determine the fuel status based on the percentage
-
-
 def get_fraction():
     while True:
-        fraction = input("Fraction: ")   # Prompt the user to enter a fraction
+        fraction = input("Fraction: ")
         try:
-            result = round(eval(fraction), 2)      # Evaluate the fraction and round the result to 2 decimal places
-            if 0 <= result <= 1:                   # Check if the result is between 0 and 1 (inclusive)
-                return result                      # Return the result if it meets the condition
+            result = round(eval(fraction), 2)
+            if 0 <= result <= 1:
+                return result
         except (NameError, ZeroDivisionError, SyntaxError, ValueError):
-            pass                                  # Ignore exceptions and continue to the next iteration
+            pass
 
 
 def get_percentage(fraction):
-    return round(float(fraction) * 100)      # Convert the fraction to a percentage and round it to the nearest integer
+    return round(float(fraction) * 100)
 
 
-def remaining_fuel(percentage):
+def fuel_gauge(percentage):
     if percentage <= 1:
-        print("E")                           # If the percentage is less than or equal to 1, print "E"
+        return "E"
     elif percentage >= 99:
-        print("F")                           # If the percentage is greater than or equal to 99, print "F"
+        return "F"
     else:
-        print(f"{percentage}%", end="")      # Otherwise, print the percentage followed by "%"
+        return f"{percentage}%"
 
 
-main()   # Start the program execution by calling the main function
+def main():
+    fraction = get_fraction()
+    percentage = get_percentage(fraction)
+    fuel_percentage = fuel_gauge(percentage)
+    print(fuel_percentage)
+
+
+if __name__ == "__main__":
+    main()
