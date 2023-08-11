@@ -6,7 +6,6 @@ import inflect
 p = inflect.engine()
 
 
-
 def main():
     birth_date = input("Date of Birth: ")
     try:

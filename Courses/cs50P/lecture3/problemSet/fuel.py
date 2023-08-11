@@ -2,15 +2,16 @@ def get_fraction():
     while True:
         fraction = input("Fraction: ")
         try:
-            result = round(eval(fraction), 2)
+            result = round(eval(fraction), 4)
             if 0 <= result <= 1:
                 return result
         except (NameError, ZeroDivisionError, SyntaxError, ValueError):
+            print("Invalid Input")
             pass
 
 
 def get_percentage(fraction):
-    return round(float(fraction) * 100)
+    return float(fraction) * 100
 
 
 def fuel_gauge(percentage):
