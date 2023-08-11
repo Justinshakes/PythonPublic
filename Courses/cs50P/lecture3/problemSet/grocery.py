@@ -13,11 +13,12 @@ def create_grocery_list():
 
 
 def main():
+    print("Create your grocery list")
     grocery_list = create_grocery_list()
 
-    # print(grocery.keys())
-    # print(grocery.values())
-    # print(grocery.items())
+    # print(grocery_list.keys())
+    # print(grocery_list.values())
+    # print(grocery_list.items())
 
     for key in sorted(grocery_list.keys()):
         print(grocery_list[key], key)
