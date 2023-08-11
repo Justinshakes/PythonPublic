@@ -3,11 +3,11 @@ def get_date_input():
 
 
 def parse_date_input(date_input, months):
-    if "/" in date_input:
-        return map(int, date_input.split("/"))
+    if '/' in date_input:
+        return map(int, date_input.split('/'))
     else:
         month_name, day, year = date_input.split()
-        day = day.replace(",", "")
+        day = day.replace(',', '')
         month = months.index(month_name) + 1
         return int(day), int(month), int(year)
 
@@ -21,7 +21,7 @@ def format_date(year, month, day):
 
 
 def main():
-    months = [
+    months = (
         "January",
         "February",
         "March",
@@ -34,7 +34,7 @@ def main():
         "October",
         "November",
         "December",
-    ]
+    )
 
     while True:
         try:
@@ -47,7 +47,6 @@ def main():
                 break
             else:
                 print("Invalid date. Please enter a valid date.")
-
         except ValueError:
             print("Invalid input. Please enter the date in the specified format.")
 
