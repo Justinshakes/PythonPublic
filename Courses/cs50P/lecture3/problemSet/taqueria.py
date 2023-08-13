@@ -13,7 +13,7 @@ def menu(item):
     return menu_items.get(item, 0)
 
 
-def main():
+def order_food():
     total = 0.00
     print("Ctrl+D to stop ordering")
     while True:
@@ -26,7 +26,11 @@ def main():
             print(f"Total: ${total:.2f}")
 
         except EOFError:
-            break
+            return total
+
+
+def main():
+    total = order_food()
     print(f"Grand total: ${total:.2f}")
 
 

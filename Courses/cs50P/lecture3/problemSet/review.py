@@ -1,34 +1,37 @@
-def get_fraction():
-    print("Ex: 3/4")
+def menu(item):
+    menu_items = {
+        "Baja Taco": 4.00,
+        "Burrito": 7.50,
+        "Bowl": 8.50,
+        "Nachos": 11.00,
+        "Quesadilla": 8.50,
+        "Super Burrito": 8.50,
+        "Super Quesadilla": 9.50,
+        "Taco": 3.00,
+        "Tortilla Salad": 8.00,
+    }
+    return menu_items.get(item, 0)
+
+
+def order_food():
+    total = 0.00
+    print("Ctrl+D to stop ordering")
     while True:
-        fraction = input("Fraction: ")
         try:
-            result = round(eval(fraction), 2)
-            if 0 <= result <= 1:
-                return result
-        except (NameError, ZeroDivisionError, SyntaxError, ValueError):
-            print("Invalid input")
-            pass
+            item = input("Item: ")
+            item_cost = menu(item.title())
+            if item_cost == 0:
+                print(f"{item} is not on the menu")
+            total += item_cost
+            print(f"Total: ${total:.2f}")
 
-
-def get_percentage(fraction):
-    return round(float(fraction) * 100)
-
-
-def fuel_gauge(percentage):
-    if percentage <= 1:
-        return "E"
-    elif percentage >= 99:
-        return "F"
-    else:
-        return f"{percentage}%"
+        except EOFError:
+            return total
 
 
 def main():
-    fraction = get_fraction()
-    percentage = get_percentage(fraction)
-    fuel_percentage = fuel_gauge(percentage)
-    print(fuel_percentage)
+    total = order_food()
+    print(f"Grand total: ${total:.2f}")
 
 
 if __name__ == "__main__":
