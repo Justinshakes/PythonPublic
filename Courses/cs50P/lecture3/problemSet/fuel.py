@@ -1,4 +1,5 @@
 def get_fraction():
+    print("Ex: 3/4")
     while True:
         fraction = input("Fraction: ")
         try:
@@ -6,6 +7,7 @@ def get_fraction():
             if 0 <= result <= 1:
                 return result
         except (NameError, ZeroDivisionError, SyntaxError, ValueError):
+            print("Invalid input")
             pass
 
 
