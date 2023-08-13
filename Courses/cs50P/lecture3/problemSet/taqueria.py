@@ -19,12 +19,11 @@ def order_food():
     while True:
         try:
             item = input("Item: ")
-            item_cost = menu(item.title())
+            item_cost = menu((item.title()))
             if item_cost == 0:
-                print(f"{item} is not on the menu")
+                print(f"'{item}' is not on the menu")
             total += item_cost
             print(f"Total: ${total:.2f}")
-
         except EOFError:
             return total
 
