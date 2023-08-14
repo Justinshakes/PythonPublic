@@ -1,37 +1,31 @@
-def menu(item):
-    menu_items = {
-        "Baja Taco": 4.00,
-        "Burrito": 7.50,
-        "Bowl": 8.50,
-        "Nachos": 11.00,
-        "Quesadilla": 8.50,
-        "Super Burrito": 8.50,
-        "Super Quesadilla": 9.50,
-        "Taco": 3.00,
-        "Tortilla Salad": 8.00,
-    }
-    return menu_items.get(item, 0)
-
-
-def order_food():
-    total = 0.00
-    print("Ctrl+D to stop ordering")
+def create_grocery_list():
+    grocery_list = {}
     while True:
         try:
-            item = input("Item: ")
-            item_cost = menu(item.title())
-            if item_cost == 0:
-                print(f"{item} is not on the menu")
-            total += item_cost
-            print(f"Total: ${total:.2f}")
+            item = input().upper()
+
+            if item in grocery_list:
+                grocery_list[item] += 1
+            else:
+                grocery_list[item] = 1
 
         except EOFError:
-            return total
+            return grocery_list
+
+
+def print_list(grocery_list):
+    print("keys: ", grocery_list.keys())
+    print("values: ", grocery_list.values())
+    print("items: ", grocery_list.items())
+
+    for key in sorted(grocery_list.keys()):
+        print(grocery_list[key], key)
 
 
 def main():
-    total = order_food()
-    print(f"Grand total: ${total:.2f}")
+    print("Create your grocery list: ")
+    grocery_list = create_grocery_list()
+    print_list(grocery_list)
 
 
 if __name__ == "__main__":
