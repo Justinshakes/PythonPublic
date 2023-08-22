@@ -3,8 +3,7 @@ def playback(user_input):
 
 
 def main():
-    user_input = input("Input String: ")
-    user_input = playback(user_input)
+    user_input = playback(input("Input: "))
     print(user_input)
 
 
