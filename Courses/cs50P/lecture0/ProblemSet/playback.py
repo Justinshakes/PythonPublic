@@ -1,10 +1,9 @@
-def playback(user_input):
-    return user_input.replace(" ", "...")
+def lower_case(s):
+    return s.casefold()
 
 
 def main():
-    user_input = input("Input String: ")
-    user_input = playback(user_input)
+    user_input = lower_case(input("Input String: "))
     print(user_input)
 
 
