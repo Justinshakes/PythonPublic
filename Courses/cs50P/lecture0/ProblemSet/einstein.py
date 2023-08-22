@@ -1,5 +1,13 @@
-# Convert input to an integer
-mass = int(input("Mass in kg's: "))
-c = 300000000  # Speed of light in meters per second
-energy = mass * (c ** 2)
-print("E:", energy)
+def convert(mass):
+    c = 300000000
+    return int(mass) * (c ** 2)
+
+
+def main():
+    energy = convert(input("Mass in Kg's: "))
+
+    print(energy)
+
+
+if __name__ == "__main__":
+    main()

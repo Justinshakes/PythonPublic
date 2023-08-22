@@ -1,21 +1,12 @@
-def convert(user_input):
-    emoji_dict = {
-        ":)": "🙂",
-        ":(": "🙁",
-        # Add more conversions here
-    }
-
-    print(emoji_dict.items())
-
-    for emoji_code, emoji in emoji_dict.items():
-        user_input = user_input.replace(emoji_code, emoji)
-
-    return user_input
+def convert(mass):
+    c = 300000000
+    return int(mass) * (c ** 2)
 
 
 def main():
-    user_input = convert(input("Emoji Converter: "))
-    print(user_input)
+    energy = convert(input("Mass in Kg's: "))
+
+    print(energy)
 
 
 if __name__ == "__main__":
