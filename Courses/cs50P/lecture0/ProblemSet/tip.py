@@ -1,12 +1,18 @@
-def calculate(expression):
-    num1, operator, num2 = expression.split(' ')
-    return float(eval(num1 + operator + num2))
-
-
 def main():
-    expression = input("Expression: ")
-    result = calculate(expression)
-    print(f"{round(result, 1)}")
+    dollars = dollars_to_float(input("How much was the meal? "))
+    percent = percent_to_float(input("What percentage would you like to tip? "))
+    tip = dollars * percent
+    print(f"Leave ${tip:.2f}")
+
+
+def dollars_to_float(d):
+    d = d.removeprefix("$").removesuffix("$")
+    return float(d)
+
+
+def percent_to_float(p):
+    p = p.removesuffix("%")
+    return float(p) / 100
 
 
 if __name__ == "__main__":
