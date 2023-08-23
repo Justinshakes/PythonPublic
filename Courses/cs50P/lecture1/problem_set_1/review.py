@@ -1,6 +1,6 @@
 def convert(time):
-    hours, minutes = time.split(":")
-    return float(hours) + float(minutes) / 60
+    hours, minutes = time.split(':')
+    return round(float(hours) + float(minutes) / 60, 2)
 
 
 def what_time(time):
@@ -15,10 +15,9 @@ def what_time(time):
 
 
 def main():
-    user_input = input("What time is it? ")
+    user_input = input("What time is it in 24 hour format: ")
     converted_time = convert(user_input)
     meal_time = what_time(converted_time)
-    print(meal_time)
 
 
 if __name__ == "__main__":
