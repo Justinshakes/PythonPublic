@@ -1,21 +1,15 @@
-def string_clean(s):
+def multi_table(number):
     result = ""
-    for char in s:
-        if not char.isnumeric():
-            result += char
-    return result
+    counter = 1
+    while counter <= 10:
+        result += f"{counter} * {number} = {number * counter}\n"
+        counter += 1
+    return result.strip()  # Remove leading and trailing whitespace
 
 
 def main():
-    result1 = string_clean("")  # ""
-    result2 = string_clean("! !")  # ! !
-    result3 = string_clean("123456789")  # , "")
-    result4 = string_clean("(E3at m2e2!!)")  # , "(Eat me!!)")
-
-    print(result1)
-    print(result2)
-    print(result3)
-    print(result4)
+    result = multi_table(5)
+    print(result)
 
 
 main()
