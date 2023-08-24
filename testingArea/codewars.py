@@ -1,18 +1,21 @@
-def final_grade(exam, projects):
-    if exam > 90 or projects > 10:
-        return 100
-    if exam > 75 and projects >= 5:
-        return 90
-    if exam > 50 and projects >= 2:
-        return 75
-    return 0
+def string_clean(s):
+    result = ""
+    for char in s:
+        if not char.isnumeric():
+            result += char
+    return result
 
 
 def main():
-    result1 = final_grade(100, 12)  # 100
-    result2 = final_grade(85, 5)
+    result1 = string_clean("")  # ""
+    result2 = string_clean("! !")  # ! !
+    result3 = string_clean("123456789")  # , "")
+    result4 = string_clean("(E3at m2e2!!)")  # , "(Eat me!!)")
+
     print(result1)
     print(result2)
+    print(result3)
+    print(result4)
 
 
 main()
