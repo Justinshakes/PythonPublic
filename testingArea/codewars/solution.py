@@ -1,12 +1,14 @@
-def is_palindrome(original_string):
-    original_string = original_string.lower()
-    reversed_string = original_string[::-1]
-    return original_string == reversed_string
-
+def process_string(input_str):
+    sep_list = input_str.split(",")
+    if len(sep_list) < 3:
+        return None
+    processed_str = " ".join(sep_list[1:-1])
+    return processed_str
 
 def main():
-    s = input("Input: ")
-    print(is_palindrome(s))
+    input_str = '1,2,3'
+    processed_str = process_string(input_str)
+    print(processed_str)
 
-
-main()
+if __name__ == "__main__":
+    main()
