@@ -1,9 +1,10 @@
-def array_plus_array(arr1, arr2):
-    return sum(arr1) + sum(arr2)
+def get_average(marks):
+    total = sum(marks) / len(marks)
+    return int(total)
 
 
 def main():
-    result1 = array_plus_array([1, 2, 3], [4, 5, 6])  # 21
+    result1 = get_average([2, 5, 13, 20, 16, 16, 10])  # 11
     print(result1)
 
 
