@@ -1,15 +1,9 @@
-def invert(lst):
-    result = []
-    for num in lst:
-        if num <= 0:
-            result.append(abs(num))
-        else:
-            result.append(num * -1)
-    return result
+def array_plus_array(arr1, arr2):
+    return sum(arr1) + sum(arr2)
 
 
 def main():
-    result1 = invert([1, -2, 3, -4, 5])  # [-1,2,-3,4,-5
+    result1 = array_plus_array([1, 2, 3], [4, 5, 6])  # 21
     print(result1)
 
 
