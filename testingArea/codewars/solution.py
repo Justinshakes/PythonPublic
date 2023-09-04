@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 def invert(lst):
     result = []
     for num in lst:
@@ -13,17 +12,6 @@ def main():
     result1 = invert([1, -2, 3, -4, 5])  # [-1,2,-3,4,-5
     print(result1)
 
-=======
-def add_length(str_):
-    list = str_.split()
-    result = []
-
-
-def main():
-    print(add_length("apple ban"))
 
 if __name__ == "__main__":
     main()
->>>>>>> 52f4fc82dc3d64ce3cbc48db727752afdd39976f
-
-# Vacation Still Vacation still Vacation
