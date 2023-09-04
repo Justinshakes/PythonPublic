@@ -1,16 +1,5 @@
 def remove_every_other(my_list):
-    # Initialize an empty list to store the selected elements
-    selected_elements = []
-
-    # Iterate over the indices of elements in my_list
-    for index in range(len(my_list)):
-        # Check if the index is even (every other element)
-        if index % 2 == 0:
-            # Append the element at the current index to selected_elements
-            selected_elements.append(my_list[index])
-
-    # Return the list of selected elements
-    return selected_elements
+    return my_list[::2]
 
 
 def main():
